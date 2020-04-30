@@ -1,4 +1,4 @@
-# AprilTag Distance Calculator Using D435i RealSense
+# AprilTag Distance Calculator: Using D435i RealSense
 Using a RealSense D435i, calculate the distance between a reference AprilTag and other AprilTags using C++.
 
 
