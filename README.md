@@ -1,11 +1,11 @@
 # AprilTag Distance Calculator: Using D435i RealSense
 Calculate the distance between a reference AprilTag and additional AprilTags with a RealSense D435i depth camera. Output values referencing a defined AprilTag ID as the origin and track multiple AprilTags based on those coordinates.
 
-Built with the a base of an open source [AprilTags C++ library](https://people.csail.mit.edu/kaess/apriltags/) and a reference to [Intel® RealSense™ SDK 2.0](https://github.com/IntelRealSense/librealsense), a hybrid distance calculator was made to reduce the startup costs of manually opening video streams, identify Apriltags while using the librealsense C++ API, and dynamically find the distance between tags with an [OpenCV](https://opencv.org/) display.
+Built with the a base of an open source [AprilTags C++ library](https://people.csail.mit.edu/kaess/apriltags/) and a reference to [Intel® RealSense™ SDK 2.0](https://github.com/IntelRealSense/librealsense), a hybrid distance calculator was made to reduce the startup costs of manually programming access to video streams, identify Apriltags while using the librealsense C++ API, and dynamically find the distance between tags with an [OpenCV](https://opencv.org/) display.
 
 ## Features
 
-The main function of this program is to detect [AprilTags](https://github.com/AprilRobotics/apriltag) and print out the distances relative to an origin. Below is the main code segiment where the distance is printed relative to the vectors orginating from the camera in meters. This occurs only if the tags are detected in time. Oherwise, it brings up an error of lacking a reference tag where it defaults to the last known values or erases the entire string if a normal tag.
+The main function of this program is to detect [AprilTags](https://github.com/AprilRobotics/apriltag) and print out the distances relative to an origin. Below is the main code segiment where the distance is printed relative to the vectors orginating from the camera in meters. This occurs only if the tags are detected in time. Otherwise, it brings up an error of lacking a reference tag where it defaults to the last known values or erases the entire string of a normal tag.
 
 ```c++
         map<int, int>::iterator it;
@@ -37,8 +37,7 @@ The main function of this program is to detect [AprilTags](https://github.com/Ap
         }
 ```
 
-This structure can be seen best below as the tags are moved across the RealSense's field of view. The highlighted 
-
+This structure can be seen best below as the tags are moved across the RealSense's field of view. The highlighted red circles define the center of a detected AprilTag. As the tags move out of view, the program delays by a defined variable before confirming the tags are missing to reduce small hiccups of missing informtion and smooth out the data.
 
 
 ![](Demo.gif)
