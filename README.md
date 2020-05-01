@@ -23,6 +23,6 @@ I think you should use an
 
 ## Features
 
-<div style="text-align:center"><img src="Demo.gif" /></div>
+![](Demo.gif)
 
 ## Installation
