@@ -56,7 +56,7 @@ This structure can be seen best below as the tags are moved across the RealSense
 
 ### Setup
 
-Due to issues separating the make file when the previous author used a pods build system in connection with cmake and getting the correct dependencies, the code currently must run in the /apriltags/demo folder of the AprilTags C++ Library. It only references a few key components and should be able to be implemented elsewhere shortly. Within the setup, the [CMakeLists.txt](https://bitbucket.org/kaess/apriltags/src/master/example/CMakeLists.txt) file must be edited to include:
+Due to issues separating the make file when the previous author used a pods build system in connection with cmake and getting the correct dependencies, the code currently must run in the /apriltags/example folder of the AprilTags C++ Library. It only references a few key components and should be able to be implemented elsewhere shortly. Within the setup, the [CMakeLists.txt](https://bitbucket.org/kaess/apriltags/src/master/example/CMakeLists.txt) file must be edited to include:
 ```
 cmake_minimum_required (VERSION 2.6)
 
