@@ -50,13 +50,38 @@ This structure can be seen best below as the tags are moved across the RealSense
 
 * Linux (Ubuntu 12.04 and above) 
 * Mac OS X (10.8.2 and above) 
-* Windows not officially supported, but might work)
+* Windows not officially supported, but might work
 * Download and install the [AprilTags C++ Library](https://people.csail.mit.edu/kaess/apriltags/) 
+* Download and install [Intel® RealSense™ SDK 2.0](https://github.com/IntelRealSense/librealsense)
 * C++
+
+### Setup
+
+Due to issues seperating the make file when the previous author used a pods build system in connection with cmake and getting the correct depencenies, the code currently must run in the /apriltags/demo folder of the AprilTags C++ Library. It only references a few key components and should be able to be implimented elsewhere shortly. Within the setup, the [CMakeLists.txt](https://bitbucket.org/kaess/apriltags/src/master/example/CMakeLists.txt) file must be editted to include:
+
+```
+cmake_minimum_required (VERSION 2.6)
+
+link_libraries(apriltags)
+link_libraries(realsense2)
+
+add_executable(apriltags_demo apriltags_demo.cpp Serial.cpp)
+pods_install_executables(apriltags_demo)
+
+add_executable(realsense_apriltag realsense_apriltag.cpp Serial.cpp)
+pods_install_executables(realsense_apriltag)
+
+add_executable(imu imu.cpp Serial.cpp)
+pods_install_executables(imu)
+
+```
+Now it should be ready to run following the AprilTag C++ Library instructions.
 
 ## Usage
 
 ### Command-Line Interface & OpenCV
+
+
 
 ### Use Case
 
