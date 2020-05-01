@@ -37,29 +37,22 @@ The main function of this program is to detect [AprilTags](https://github.com/Ap
         }
 ```
 
-This structure can be seen best below as the tags are moved across the RealSense's field of view. The highlighted red circles define the center of a detected AprilTag. As the tags move out of view, the program delays by a defined variable before confirming the tags are missing to reduce small hiccups of missing informtion and smooth out the data.
+
+This structure can be seen best below as the tags are moved across the RealSense's field of view. The highlighted red circles define the center of a detected AprilTag. As the tags move out of view, the program delays by a defined variable before confirming the tags are missing to reduce small hiccups of missing informtion and smooth out the data. More detailed comments are in the program. 
 
 
 ![](Demo.gif)
-
-
- * Code based off open source "Getting Started with OpenCV" with librealsense on GitHub and 
- * an open source AprilTags C++ library available on Linux and Mac. By using librealsense C++
- * as a high level API library, streaming from the RealSense is simplified by a few hundred lines
- * of code while adding additional features. These include modifying the reference point to an 
- * selected AprilTag and adding checks to this parameter. The output is carriage returned and
- * cleared in the terminal as it continuously updates in a pop up window using OpenCV. Smoothing 
- * was added for the continuous updates as every so often a tag wouldn't be recognized in a frame. 
- * By using the librealsense API, additional use of point cloud referencing and checks would be simple 
- * to implement and layer, but have yet to be included.
-
 
 
 ## Installation
 
 ### Requirements
 
-
+* Linux (Ubuntu 12.04 and above) 
+* Mac OS X (10.8.2 and above) 
+* Windows not officially supported, but might work)
+* Download and install the [AprilTags C++ Library](https://people.csail.mit.edu/kaess/apriltags/) 
+* C++
 
 ## Usage
 
@@ -91,5 +84,3 @@ I think you should use an
     }
 
 ![](realsensesize.jpg)
-
-![](Demo.gif)
