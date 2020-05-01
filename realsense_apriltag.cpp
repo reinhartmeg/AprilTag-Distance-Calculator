@@ -5,12 +5,12 @@
  * Code based off open source "Getting Started with OpenCV" with librealsense on GitHub and 
  * an open source AprilTags C++ library available on Linux and Mac. By using librealsense C++
  * as a high level API library, streaming from the RealSense is simplified by a few hundred lines
- * of code while adding addtional features. These include modifying the reference point to an 
+ * of code while adding additional features. These include modifying the reference point to an 
  * selected AprilTag and adding checks to this parameter. The output is carriage returned and
- * cleared in the terminal as it continously updates in a pop up window using OpenCV. Smoothing 
- * was added for the continous updates as every so often a tag wouldn't be recognized in a frame. 
- * By using the librealsense API, additonal use of pointcloud referencing and checks would be simple 
- * to impliment and layer, but have yet to be included.
+ * cleared in the terminal as it continuously updates in a pop up window using OpenCV. Smoothing 
+ * was added for the continuous updates as every so often a tag wouldn't be recognized in a frame. 
+ * By using the librealsense API, additional use of point cloud referencing and checks would be simple 
+ * to implement and layer, but have yet to be included.
  */
 
 #include <cmath>
