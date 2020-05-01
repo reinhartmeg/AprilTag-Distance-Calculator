@@ -87,5 +87,5 @@ In terms of accuracy, it tends to be within a centimeter or less and outputs in 
 
 ## Future Improvements
 
-True use of depth with point cloud and other features unique to RealSense would be the logical next step. Since the library has been implemented in this version, it should be relatively straight forward to use the API to sync separate pipeline streams into the program. It could be aligned to perform checks relative to the RGB camera used to detect the AprilTags. Yaw, pitch, and roll are also calculated in this program. While not printed since they are relative to the camera, it could be used to identify more specific translation in space besides the X, Y, and Z coordinates.
+True use of depth with point cloud and other features unique to RealSense would be the logical next step. Since the library has been implemented in this version, it should be relatively straight forward to use the API to sync separate pipeline streams into the program. It could be aligned to perform checks relative to the RGB camera used to detect the AprilTags. Yaw, pitch, and roll are also calculated in this program. While not printed since they are relative to the camera, they could be used to identify more specific translation in space besides the X, Y, and Z coordinates.
 
