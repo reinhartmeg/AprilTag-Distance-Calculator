@@ -25,6 +25,3 @@ I think you should use an
 ## Features
 
 ## Installation
-
-
-
