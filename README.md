@@ -83,7 +83,7 @@ Franka Emika in Lab        |  RealSense AprilTag Demo
 :-------------------------:|:-------------------------:
 ![](panda.jpg)             |  ![](realsensesize.jpg)
 
-In terms of accuracy, it tends to be within a centimeter or less and outputs in meters. 
+In terms of accuracy, it tends to be within a centimeter or less and outputs in meters. The precision is similarly high and should reliably grip objects within the tolerance window of the Panda’s end effector.
 
 ## Future Improvements
 
