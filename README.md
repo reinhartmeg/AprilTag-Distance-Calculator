@@ -5,6 +5,28 @@ Built with the a base of an open source [AprilTags C++ library](https://people.c
 
 ## Features
 
+
+
+
+## Installation
+
+### Requirements
+
+
+
+## Usage
+
+### Command-Line Interface & OpenCV
+
+### Use Case
+
+
+
+## Future Improvements
+
+
+
+
 You can use one `#` all the way up to `######` six for different heading sizes.
 
 If you'd like to quote someone, use the > character before the line:
@@ -21,8 +43,6 @@ I think you should use an
       }
     }
 
-## Features
+![](realsensesize.jpg)
 
 ![](Demo.gif)
-
-## Installation
