@@ -6,7 +6,7 @@ Built with the a base of an open source [AprilTags C++ library](https://people.c
 
 ## Features
 
-The main function of this program is to detect [AprilTags](https://github.com/AprilRobotics/apriltag) and print out the distances relative to an origin. Below is the main code segiment where the distance is printed relative to the vectors orginating from the camera in meters. This occurs only if the tags are detected in time. Otherwise, it brings up an error of lacking a reference tag where it defaults to the last known values or erases the entire string of a normal tag.
+The main function of this program is to detect [AprilTags](https://github.com/AprilRobotics/apriltag) and print out the distances relative to an origin. Below is the main code segment where the distance is printed relative to the vectors originating from the camera in meters. This occurs only if the tags are detected in time. Otherwise, it brings up an error of lacking a reference tag where it defaults to the last known values or erases the entire string of a normal tag.
 
 ```c++
         map<int, int>::iterator it;
@@ -38,7 +38,7 @@ The main function of this program is to detect [AprilTags](https://github.com/Ap
         }
 ```
 
-This structure can be seen best below as the tags are moved across the RealSense's field of view. The highlighted red circles define the center of a detected AprilTag. As the tags move out of view, the program delays by a defined variable before confirming the tags are missing to reduce small hiccups of missing informtion and smooth out the data. More detailed comments are in the program. 
+This structure can be seen best below as the tags are moved across the RealSense's field of view. The highlighted red circles define the center of a detected AprilTag. As the tags move out of view, the program delays by a defined variable before confirming the tags are missing to reduce small hiccups of missing information and smooth out the data. More detailed comments are in the program. 
 
 ![](Demo.gif)
 
@@ -56,8 +56,7 @@ This structure can be seen best below as the tags are moved across the RealSense
 
 ### Setup
 
-Due to issues seperating the make file when the previous author used a pods build system in connection with cmake and getting the correct depencenies, the code currently must run in the /apriltags/demo folder of the AprilTags C++ Library. It only references a few key components and should be able to be implimented elsewhere shortly. Within the setup, the [CMakeLists.txt](https://bitbucket.org/kaess/apriltags/src/master/example/CMakeLists.txt) file must be editted to include:
-
+Due to issues separating the make file when the previous author used a pods build system in connection with cmake and getting the correct dependencies, the code currently must run in the /apriltags/demo folder of the AprilTags C++ Library. It only references a few key components and should be able to be implemented elsewhere shortly. Within the setup, the [CMakeLists.txt](https://bitbucket.org/kaess/apriltags/src/master/example/CMakeLists.txt) file must be edited to include:
 ```
 cmake_minimum_required (VERSION 2.6)
 
@@ -78,12 +77,14 @@ Now it should be ready to run following the AprilTag C++ Library instructions.
 
 ## Usage
 
-The program was designed to assit in the movement of a [Franka Emika Panda Robot](https://www.franka.de/technology). By attaching an AprilTag in a known location from the base, or the reference tag, the goal is to manually input the distance to the true base the robot recognizes. From here, the Panda can predict the distance to the end effector relative to its surroundings and objects attatched to AprilTags.
+The program was designed to assist in the movement of a [Franka Emika Panda Robot](https://www.franka.de/technology). By attaching an AprilTag in a known location from the base, or the reference tag, the goal is to manually input the distance to the true base the robot recognizes. From here, the Panda can predict the distance to the end effector relative to its surroundings and objects attached to AprilTags.
 
 Franka Emika in Lab        |  RealSense AprilTag Demo
 :-------------------------:|:-------------------------:
 ![](panda.jpg)             |  ![](realsensesize.jpg)
 
+In terms of accuracy, it tends to be within a centimeter or less and outputs in meters. 
+
 ## Future Improvements
 
-True use of depth with pointcloud and other features unquie to RealSense would be the logical next step. Since the library has been implimented in this version, it should be relatively striaght forward to use the API to sync seperate pipeline streams into the program. It could be aligned to perform checks relative to the RGB camera used to detect the AprilTags. Yaw, pitch, and roll are also calculated in this program while not printed since they're still relative to the camera. It could be used to identify more specific translation in spcae besides the X, Y, and Z coordinates. 
+True use of depth with point cloud and other features unique to RealSense would be the logical next step. Since the library has been implemented in this version, it should be relatively straight forward to use the API to sync separate pipeline streams into the program. It could be aligned to perform checks relative to the RGB camera used to detect the AprilTags. Yaw, pitch, and roll are also calculated in this program while not printed since they are still relative to the camera. It could be used to identify more specific translation in space besides the X, Y, and Z coordinates.
