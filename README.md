@@ -1,4 +1,5 @@
 # AprilTag Distance Calculator: Using D435i RealSense
+
 Calculate the distance between a reference AprilTag and additional AprilTags with a RealSense D435i depth camera. Output values referencing a defined AprilTag ID as the origin and track multiple AprilTags based on those coordinates.
 
 Built with the a base of an open source [AprilTags C++ library](https://people.csail.mit.edu/kaess/apriltags/) and a reference to [Intel® RealSense™ SDK 2.0](https://github.com/IntelRealSense/librealsense), a hybrid distance calculator was made to reduce the startup costs of manually programming access to video streams, identify Apriltags while using the librealsense C++ API, and dynamically find the distance between tags with an [OpenCV](https://opencv.org/) display.
@@ -37,12 +38,9 @@ The main function of this program is to detect [AprilTags](https://github.com/Ap
         }
 ```
 
-
 This structure can be seen best below as the tags are moved across the RealSense's field of view. The highlighted red circles define the center of a detected AprilTag. As the tags move out of view, the program delays by a defined variable before confirming the tags are missing to reduce small hiccups of missing informtion and smooth out the data. More detailed comments are in the program. 
 
-
 ![](Demo.gif)
-
 
 ## Installation
 
@@ -53,6 +51,7 @@ This structure can be seen best below as the tags are moved across the RealSense
 * Windows not officially supported, but might work
 * Download and install the [AprilTags C++ Library](https://people.csail.mit.edu/kaess/apriltags/) 
 * Download and install [Intel® RealSense™ SDK 2.0](https://github.com/IntelRealSense/librealsense)
+* RealSense Depth Camera (D435i or family type)
 * C++
 
 ### Setup
@@ -79,29 +78,12 @@ Now it should be ready to run following the AprilTag C++ Library instructions.
 
 ## Usage
 
-The program was designed to assit in the movement of a [Franka Emika Panda Robot](https://www.franka.de/technology). By attaching an AprilTag in a known location from the base, or the reference tag, the goal is to manually input the distance to the true base. Here the Panda can predict the distance to the end effector realitive to its surroundings. 
+The program was designed to assit in the movement of a [Franka Emika Panda Robot](https://www.franka.de/technology). By attaching an AprilTag in a known location from the base, or the reference tag, the goal is to manually input the distance to the true base the robot recognizes. From here, the Panda can predict the distance to the end effector relative to its surroundings and objects attatched to AprilTags.
 
-![](Franka.jpg)
+Franka Emika in Lab        |  RealSense AprilTag Demo
+:-------------------------:|:-------------------------:
+![](panda.jpg)             |  ![](realsensesize.jpg)
 
 ## Future Improvements
 
-
-
-
-You can use one `#` all the way up to `######` six for different heading sizes.
-
-If you'd like to quote someone, use the > character before the line:
-
-> Coffee. The finest organic suspension ever devised... I beat the Borg with it.
-> - Captain Janeway
-
-I think you should use an
-`<Add in here>` element here instead.
-
-    function fancyAlert(arg) {
-      if(arg) {
-        $.facebox({div:'#foo'})
-      }
-    }
-
-![](realsensesize.jpg)
+True use of depth with pointcloud and other features unquie to RealSense would be the logical next step. Since the library has been implimented in this version, it should be relatively striaght forward to use the API to sync seperate pipeline streams into the program. It could be aligned to perform checks relative to the RGB camera used to detect the AprilTags. Yaw, pitch, and roll are also calculated in this program while not printed since they're still relative to the camera. It could be used to identify more specific translation in spcae besides the X, Y, and Z coordinates. 
