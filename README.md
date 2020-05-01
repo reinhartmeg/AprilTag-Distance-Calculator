@@ -1,8 +1,7 @@
 # AprilTag Distance Calculator: Using D435i RealSense
-Using a RealSense D435i, calculate the distance between a reference AprilTag and other AprilTags using C++.
+Calculate the distance between a reference AprilTag and other AprilTags using C++ with a RealSense D435i depth camera. Output values referencing a defined AprilTag ID as the origin and tracking multiple additional AprilTags based on those coordinates.
 
-
-Sometimes it's useful to have different levels of headings to structure your documents. Start lines with a `#` to create headings. Multiple `##` in a row denote smaller heading sizes.
+Built with the a base of an open source [AprilTags C++ library](https://people.csail.mit.edu/kaess/apriltags/) and a reference to [Intel® RealSense™ SDK 2.0](https://github.com/IntelRealSense/librealsense) a hybrid distance calculated was made to reduce the startup costs of manually opening video streams and identifying Apriltags.
 
 ## Features
 
