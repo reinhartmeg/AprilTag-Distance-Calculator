@@ -79,13 +79,9 @@ Now it should be ready to run following the AprilTag C++ Library instructions.
 
 ## Usage
 
-### Command-Line Interface & OpenCV
+The program was designed to assit in the movement of a [Franka Emika Panda Robot](https://www.franka.de/technology). By attaching an AprilTag in a known location from the base, or the reference tag, the goal is to manually input the distance to the true base. Here the Panda can predict the distance to the end effector realitive to its surroundings. 
 
-
-
-### Use Case
-
-
+![](Franka.jpg)
 
 ## Future Improvements
 
